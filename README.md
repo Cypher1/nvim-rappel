@@ -32,7 +32,7 @@ let g:rappel#launch_key = '<leader>l'
 
 To change what the bindings do:
 ```
-let g:rappel#term       = 'sp | term '
+let g:rappel#term       = 'vsp | term '
 let g:rappel#launch     = 'chrome %'
 let g:rappel#default    = g:rappel#term
 
