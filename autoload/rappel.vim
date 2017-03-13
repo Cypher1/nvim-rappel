@@ -28,11 +28,7 @@ function! rappel#call(mode)
       echo 'Action "'.a:mode.'" is not defined for '.l:ft.'.'
     endif
   else
-    echo g:rappel#default
-    echo g:rappel#launch
-    echo a:mode
     if exists('g:rappel#default')
-      echo "DEFAULT"
       if a:mode ==# 'launch'
         call g:rappel#do_launch(g:rappel#launch)
       else

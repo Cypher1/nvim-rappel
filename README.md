@@ -50,10 +50,10 @@ let g:rappel#custom_repls={
 \}
 ```
 
-The functions
+Adds the following commands
 
 ```
-:RappelRepl
-:RappelRun
-:RappelLaunch
+:RappelRepl   " Opens a Repl in a split
+:RappelRun    " Runs the program a split
+:RappelLaunch " Opens the file with the default program
 ```
