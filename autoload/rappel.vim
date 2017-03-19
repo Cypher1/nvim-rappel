@@ -1,6 +1,13 @@
+" Execute after expanding % to the filepath
+function! rappel#expandexec(call)
+  let lpath = expand('%')
+  let expanded_call = substitute(a:call, '%', lpath, 'g')
+  execute expanded_call
+endfunction
+
 " Open a file in the OS
 function! rappel#do_launch(call)
-  execute '!'.a:call.' &> /dev/null &'
+  call rappel#expandexec('!'.a:call.' &> /dev/null &')
 endfunction
 
 " Run any REPL
@@ -22,7 +29,7 @@ function! rappel#call(mode)
         endif
 
         " Run or start REPL
-        execute g:rappel#term.' '.l:call
+        call rappel#expandexec(g:rappel#term.' '.l:call)
       endif
     else
       echo 'Action "'.a:mode.'" is not defined for '.l:ft.'.'
@@ -32,7 +39,7 @@ function! rappel#call(mode)
       if a:mode ==# 'launch'
         call g:rappel#do_launch(g:rappel#launch)
       else
-        execute g:rappel#default
+        call rappel#expandexec(g:rappel#default)
       endif
     else
       echo 'Could not find settings for '.l:ft.'.'
