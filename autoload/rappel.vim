@@ -1,8 +1,10 @@
 " Execute after expanding % to the filepath
 function! rappel#expandexec(call)
+  let path = expand('%:p')
   let lpath = expand('%')
-  let expanded_call = substitute(a:call, '%', lpath, 'g')
-  execute expanded_call
+  let exp_call1 = substitute(a:call, '%:p', path, 'g')
+  let exp_call2 = substitute(exp_call1, '%', lpath, 'g')
+  execute exp_call2
 endfunction
 
 " Open a file in the OS
