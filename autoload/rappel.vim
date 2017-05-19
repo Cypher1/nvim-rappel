@@ -61,8 +61,8 @@ let g:rappel#repls.zsh = {
 \ 'run': 'zsh %',
 \}
 let g:rappel#repls.python = {
-\ 'repl': 'python -i %',
-\ 'run': 'python %',
+\ 'repl': 'python3 -i %',
+\ 'run': 'python3 %',
 \}
 let g:rappel#repls['javascript.jsx'] = {
 \ 'repl': 'node',
