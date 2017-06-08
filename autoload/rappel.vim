@@ -106,6 +106,12 @@ let g:rappel#repls.haskell = {
 \ 'run': g:rappel#run_file_no_ext,
 \}
 
+let g:rappel#repls.elm = {
+\ 'repl': 'elm-repl',
+\ 'compiler': 'elm-make %',
+\ 'run': 'elm-reactor',
+\}
+
 " Load in custom repls
 if exists('g:rappel#custom_repls')
   for ft in keys(g:rappel#custom_repls)
