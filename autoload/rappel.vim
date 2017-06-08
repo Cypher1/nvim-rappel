@@ -109,7 +109,7 @@ let g:rappel#repls.haskell = {
 let g:rappel#repls.elm = {
 \ 'repl': 'elm-repl',
 \ 'compiler': 'elm-make %',
-\ 'run': 'elm-reactor',
+\ 'run': 'open index.html || xdg-open index.html',
 \}
 
 " Load in custom repls
